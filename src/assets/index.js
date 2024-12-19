@@ -4,6 +4,7 @@ import creator from "./creator.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
 import github from "./github.png";
+import orange from "./company/orange.png"
 import menu from "./menu.svg";
 import close from "./close.svg";
 import lo from "./lo.svg";
@@ -34,6 +35,7 @@ import angular from "./tech/angular.png";
 import springboot from "./tech/springboot.png";
 import jenkins from "./jenkins.png";
 import artie from "./artie.jpg"
+import project from "./Projet.jpeg"
 
 export {
   logo,
@@ -71,5 +73,7 @@ export {
   springboot,
   cloth,
   jenkins,
-  artie
+  artie,
+  project,
+  orange
 };

@@ -44,7 +44,11 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I am an accomplished engineering student specializing in Computer and Mobile Systems technologies, currently in my 5th and final year. My focus lies in the dynamic realm of mobile app development, where I excel in crafting immersive experiences for both iOS and Android platforms. For iOS applications, I leverage Swift to create seamless and efficient solutions, while on the Android side, I utilize Kotlin to build robust and user-friendly apps. Additionally, my proficiency extends to cross-platform development, where I employ cutting-edge technologies such as React Native and Flutter to deliver unified and high-performance experiences across multiple platforms. In the realm of web development, I am adept at creating responsive and feature-rich applications using frameworks like React, Angular, Spring Boot, and Node.js. With a solid foundation in system engineering, I bring a holistic approach to my projects, ensuring they align with the latest industry standards and user expectations!
+        I am a dedicated engineer specializing in Web and Mobile Application Development, blending technical expertise with a passion for crafting user-centric solutions. My core strength lies in developing innovative and seamless applications for both iOS and Android platforms, utilizing Swift for iOS and Kotlin for Android to deliver intuitive and efficient experiences.
+
+In the domain of cross-platform development, I leverage modern frameworks like Flutter and React Native to create cohesive and high-performance applications across multiple platforms. My web development skills encompass creating scalable, responsive, and feature-rich applications using frameworks and technologies such as React, Angular, Node.js, and Spring Boot.
+
+With a robust foundation in system engineering, I approach each project with a holistic perspective, ensuring alignment with the latest industry standards and a commitment to delivering solutions that exceed user expectations. My expertise spans the full development lifecycle, from concept to deployment, backed by hands-on experience in Agile methodologies, CI/CD pipelines, and containerization practices.
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>

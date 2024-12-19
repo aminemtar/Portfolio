@@ -1,7 +1,7 @@
 import {
     mobile,
     backend,
-    creator,
+    orange,
     web,
     javascript,
     typescript,
@@ -29,7 +29,8 @@ import {
     springboot,
     cloth,
     jenkins,
-    artie
+    artie,
+    project,
   } from "../assets";
   
   export const navLinks = [
@@ -125,16 +126,38 @@ import {
   
   const experiences = [
     {
+      title: "FullStack IOS Developer",
+      company_name: "Orange Tunisia",
+      icon: orange,
+      iconBg: "#383E56",
+      date: "Febraury 2024 - August 2024",
+      points: [
+        "📱 Developed a native iOS application to enhance member engagement and facilitate access to ODC Club activities across Tunisian universities.",
+        "🎨 Used SwiftUI to design an intuitive, modern, and interactive user interface with Clean Architecture for maintainable and scalable code.",
+        "🗓️ Built a custom event calendar from scratch, providing seamless navigation and event exploration.",
+        "🌍 Integrated an interactive map to showcase the Orange Digital Center (ODC) ecosystem and its clubs.",
+        "🔔 Implemented real-time notifications and user interactions, including likes and comments, using Firebase, with Core Data for local storage of notifications to ensure offline access.",
+        "💾 Developed a robust backend with Node.js and MongoDB for efficient data management.",
+        "🔗 Ensured seamless integration of RESTful APIs for real-time data synchronization.",
+        "🛠️ Followed Agile methodology (SCRUM) to prioritize features and ensure on-time delivery.",
+        "🏆 Contributed to community engagement by providing a platform that bridges the gap between ODC members and resources.",
+      ],
+    },
+    {
       title: "Engineering intern",
-      company_name: "ooredoo Tunisie SA",
+      company_name: "ooredoo Tunisia",
       icon: ooredoo,
       iconBg: "#383E56",
       date: "June 2023 - August 2023",
       points: [
-        "Led the development of VoicyApp, a sophisticated survey web application designed to manage scripts, scales, questions, and administrative surveys seamlessly.",
-        "Implementing robust features using Angular for the front end, Spring Boot for the backend, and PostgreSQL for data storage, ensuring a reliable and efficient survey management system.",
-        "Leveraged Angular to create an intuitive and responsive user interface, allowing administrators to easily organize, edit, and deploy survey scripts and scales.",
-        "Integrating PostgreSQL to manage survey data efficiently, optimizing data retrieval and storage processes for a responsive and reliable survey management application.",
+        "🌐 Developed a responsive web application using Angular for an intuitive and dynamic frontend experience.",
+        "🛡️ Implemented Spring Security for robust role-based access control and secure authentication.",
+        "🚀 Boosted performance and engagement by 20% through efficient design and optimization.",
+        "🗄️ Integrated PostgreSQL to streamline data management, reducing retrieval times by 15%.",
+        "🔗 Built a scalable RESTful API backend with Spring Boot, ensuring seamless communication with the frontend.",
+        "📱 Ensured mobile-first, responsive design, delivering a consistent user experience across devices.",
+        "🛠️ Adopted Agile development practices, prioritizing features and delivering on time.",
+        "📊 Enhanced data processing with efficient query handling and optimized database interactions.",
       ],
     },
     {
@@ -144,11 +167,12 @@ import {
       iconBg: "#E6DEDD",
       date: "June 2022 - July 2022",
       points: [
-        "Spearheaded the development of an innovative educational platform that transforms primary school courses into interactive and engaging educational games.",
-        "Introduced a novel approach where each lesson from the primary school books is gamified, turning the learning process into an enjoyable and effective experience for students.",
-        "Contributed to the design and implementation of a user-friendly interface, ensuring that the platform caters to the needs and preferences of primary school students.",
-        "Successfully integrated the primary school curriculum into the platform, aligning educational content with the specific requirements of each lesson in the books.",
-        "Contributed to the creation of an impactful educational resource that goes beyond traditional teaching methods, fostering a positive and interactive learning environment for primary school students.",
+        "📚 Revamped an online educational platform for children, incorporating interactive features using HTML, CSS, and JavaScript, resulting in a 25% increase in user interaction and retention.",
+        "🌟 Focused on accessibility and usability improvements, leading to a 15% boost in user satisfaction.",
+        "💾 Integrated Firebase to efficiently store and manage books, levels, and related data, ensuring seamless access and synchronization.",
+        "📱 Ensured a responsive design, delivering a seamless experience across devices.",
+        "🛠️ Optimized the platform’s performance to support engaging and user-friendly interactions.",
+        "🚀 Enhanced the platform’s appeal through thoughtful UI/UX design tailored for a younger audience.",
       ],
     },
    
@@ -250,7 +274,7 @@ import {
           color: "blue-text-gradient",
         }
       ],
-      image: jenkins,
+      image: project,
       source_code_link: "https://github.com/aminemtar/DEVOPS/",
     },
   ];
