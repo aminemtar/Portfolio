@@ -21,6 +21,7 @@ import {
   cloud,
   shopify,
   ooredoo,
+  orange,
   carrent,
   jobit,
   tripguide,
@@ -29,6 +30,7 @@ import {
   springboot,
   cloth,
   jenkins,
+  project,
   artie
 } from "../assets";
 
@@ -124,34 +126,10 @@ const technologies = [
 ];
 
 const experiences = [
-  {
-    title: "Engineering intern",
-    company_name: "ooredoo Tunisie SA",
-    icon: ooredoo,
-    iconBg: "#383E56",
-    date: "June 2023 - August 2023",
-    points: [
-      "Led the development of VoicyApp, a sophisticated survey web application designed to manage scripts, scales, questions, and administrative surveys seamlessly.",
-      "Implementing robust features using Angular for the front end, Spring Boot for the backend, and PostgreSQL for data storage, ensuring a reliable and efficient survey management system.",
-      "Leveraged Angular to create an intuitive and responsive user interface, allowing administrators to easily organize, edit, and deploy survey scripts and scales.",
-      "Integrating PostgreSQL to manage survey data efficiently, optimizing data retrieval and storage processes for a responsive and reliable survey management application.",
-    ],
-  },
-  {
-    title: "Developper intern",
-    company_name: "Cloud Monsters Tunisia",
-    icon: cloud,
-    iconBg: "#E6DEDD",
-    date: "June 2022 - July 2022",
-    points: [
-      "Spearheaded the development of an innovative educational platform that transforms primary school courses into interactive and engaging educational games.",
-      "Introduced a novel approach where each lesson from the primary school books is gamified, turning the learning process into an enjoyable and effective experience for students.",
-      "Contributed to the design and implementation of a user-friendly interface, ensuring that the platform caters to the needs and preferences of primary school students.",
-      "Successfully integrated the primary school curriculum into the platform, aligning educational content with the specific requirements of each lesson in the books.",
-      "Contributed to the creation of an impactful educational resource that goes beyond traditional teaching methods, fostering a positive and interactive learning environment for primary school students.",
-    ],
-  },
- 
+  { title: "Mobile Developer — Flutter & Android", company_name: "Smart Conseil / Netethic", icon: mobile, iconBg: "#dceeff", date: "2025 - 2026", points: ["Developed and maintained Flutter applications for education and digital services.", "Integrated REST APIs, managed application state and errors, and collaborated with design and backend teams.", "Contributed to Django APIs and native Android applications; supported releases to Google Play and the App Store."] },
+  { title: "Software Engineer — Final-Year Project", company_name: "Orange Digital Center Tunisia", icon: orange, iconBg: "#fff1df", date: "February 2024 - August 2024", points: ["Built the ODC Clubs iOS application with SwiftUI, Clean Architecture, MapKit and Core Data.", "Implemented events, calendars, articles, votes, push notifications and an interactive map of ODC Clubs.", "Developed Node.js / MongoDB REST APIs and delivered the project using Scrum."] },
+  { title: "Full-Stack Developer Intern", company_name: "Ooredoo Tunisia", icon: ooredoo, iconBg: "#e9f4ff", date: "June 2023 - August 2023", points: ["Built a web platform for SMS script and survey management using Angular, Spring Boot and PostgreSQL.", "Implemented secure role-based access and responsive administration workflows."] },
+  { title: "Web Developer Intern", company_name: "Cloud Monsters Tunisia", icon: cloud, iconBg: "#e9f4ff", date: "June 2022 - July 2022", points: ["Created an interactive, gamified learning platform using React and Firebase.", "Developed educational content and book/level storage to support children's learning."] }
 ];
 
 const testimonials = [
@@ -181,78 +159,14 @@ const testimonials = [
   },
 ];
 
+const tag = (name, color = "blue-text-gradient") => ({ name, color });
 const projects = [
-  {
-    name: "Clothy",
-    description:
-"Clothy is a versatile wardrobe management app, available on iOS and Android. Using image recognition, it simplifies adding and organizing clothes in your digital wardrobe. With complete style control, plan outfits effortlessly and explore new combinations on the go.",
-    tags: [
-      {
-        name: "Swift",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Kotlin",
-        color: "green-text-gradient",
-      },
-      {
-        name: "NodeJs",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "MongoDB",
-        color: "yellow-text-gradient",
-      },
-    ],
-    image: cloth,
-    source_code_link: "https://github.com/aminemtar/ClothyApp-Android/",
-  },
-  {
-    name: "Artie",
-    description:
-"Artie, a revolutionary project, seamlessly blends art and technology for a unique interactive experience. Fueled by a Raspberry Pi, it communicates with a Flutter app via sockets, allowing children to bring their chosen images to life through precise reproductions. This project showcases my skill in advanced technology integration, reflecting my passion for education, art, and innovation.",
-    tags: [
-      {
-        name: "React",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "NodeJs",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Raspberry pi",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: artie,
-    source_code_link: "https://github.com/aminemtar",
-  },
-  {
-    name: "DEVOPS",
-    description:
-"In the DevOps Module Project, I've mastered modern software development by constructing a robust CI/CD pipeline. This journey includes version control, automated testing, containerization, and Infrastructure as Code. Orchestrated by tools like Jenkins, it ensures efficient code compilation, rigorous testing, and secure deployments. Integrated monitoring and documentation complete this comprehensive approach to agile and reliable software delivery.",
-    tags: [
-      {
-        name: "Docker",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Jenkins",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Grafana",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Prometheus",
-        color: "blue-text-gradient",
-      }
-    ],
-    image: jenkins,
-    source_code_link: "https://github.com/aminemtar/DEVOPS/",
-  },
+  { name: "ODC Clubs", description: "A complete digital ecosystem for Orange Digital Center clubs: iOS SwiftUI app, events, calendar, voting, articles, notifications, MapKit and Node.js / MongoDB services.", tags: [tag("SwiftUI"), tag("MapKit"), tag("Node.js"), tag("MongoDB")], image: project, source_code_link: "https://github.com/aminemtar" },
+  { name: "Clothy", description: "Smart wardrobe and outfit planning on iOS and Android, with image recognition, item exchange, real-time chat and a Node.js / MongoDB backend.", tags: [tag("SwiftUI"), tag("Kotlin"), tag("Core ML"), tag("Node.js")], image: cloth, source_code_link: "https://github.com/aminemtar/ClothyApp-Android" },
+  { name: "Artie — Award-Winning Robotics", description: "Educational drawing robot with Flutter mobile control, Raspberry Pi, image-to-GCode processing, React dashboard and Node.js backend. Top 3 at ESPRIT Ball de Projet 2023.", tags: [tag("Flutter"), tag("React"), tag("Raspberry Pi")], image: artie, source_code_link: "https://github.com/aminemtar" },
+  { name: "Health 360", description: "iOS health management application built with SwiftUI and VisionKit for text recognition, plus AI-assisted medication analysis and NestJS APIs.", tags: [tag("SwiftUI"), tag("VisionKit"), tag("NestJS")], image: mobile, source_code_link: "https://github.com/aminemtar" },
+  { name: "MyLife Expenses", description: "Flutter expense management app with offline-first persistence, spending dashboards, and ongoing family subscription and synchronization features.", tags: [tag("Flutter"), tag("Drift"), tag("Supabase")], image: mobile, source_code_link: "https://github.com/aminemtar/MyLife-Expenses" },
+  { name: "DevOps CI/CD Platform", description: "End-to-end automated delivery pipeline using Jenkins, Docker, SonarQube, Nexus, Grafana and Prometheus with Angular and Spring Boot.", tags: [tag("Jenkins"), tag("Docker"), tag("Grafana")], image: jenkins, source_code_link: "https://github.com/aminemtar/DEVOPS" },
+  { name: "MacWatch", description: "macOS monitoring utility for device temperature, system activity and accessible performance charts.", tags: [tag("macOS"), tag("Monitoring")], image: backend, source_code_link: "https://github.com/aminemtar/MacWatch" }
 ];
-
 export { services, technologies, experiences, testimonials, projects };
