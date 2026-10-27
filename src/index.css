@@ -10,7 +10,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 .hash-span {
@@ -202,5 +202,3 @@
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
-/* Light blue theme for the original 3D portfolio */
-body{background:#edf5ff;color:#183553} .text-white{color:#17324e!important}.text-white-100{color:#36516e!important}.bg-tertiary{background:#fff!important;box-shadow:0 12px 35px rgba(45,96,150,.10)}.violet-gradient{background:linear-gradient(180deg,#318eea,rgba(49,142,234,0))}.green-pink-gradient{background:linear-gradient(120deg,#2e84e8,#75d4e8)}.pink-text-gradient{background:linear-gradient(90deg,#387cda,#3db8d2);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.black-gradient{background:linear-gradient(120deg,#2d6eaf,#163f69)}.vertical-timeline-element-content{box-shadow:0 12px 40px rgba(42,91,144,.12)!important}.vertical-timeline-element-date{color:#496784!important}.bg-hero-pattern{background-blend-mode:screen;position:relative}.bg-hero-pattern:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(237,245,255,.94),rgba(237,245,255,.60));pointer-events:none}.bg-hero-pattern>*{position:relative}.canvas-loader{filter:brightness(.5)}
