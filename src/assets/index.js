@@ -33,7 +33,7 @@ import cloth from "./Cloth.jpg";
 import tripguide from "./tripguide.png";
 import angular from "./tech/angular.png";
 import springboot from "./tech/springboot.png";
-import jenkins from "./jenkins.png";
+import jenkins from "./Jenkins.png";
 import artie from "./artie.jpg"
 import project from "./Projet.jpeg"
 
