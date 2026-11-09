@@ -1,7 +1,56 @@
-import React, { Suspense, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-const towers = Array.from({length:34},(_,i)=>({x:((i*17)%23)-11,z:-4-((i*13)%15),w:.7+((i*7)%9)*.12,h:2.8+((i*11)%13)*.42,d:.8+((i*5)%6)*.16}));
-function City(){const g=useRef();useFrame(({clock})=>{if(g.current)g.current.rotation.y=Math.sin(clock.elapsedTime*.035)*.025});return <group ref={g}><fog attach="fog" args={["#06152d",10,34]}/><mesh rotation={[-Math.PI/2,0,0]} position={[0,-.03,-8]} receiveShadow><planeGeometry args={[80,80]}/><meshStandardMaterial color="#071a35" metalness={.72} roughness={.24}/></mesh><gridHelper args={[80,80,"#164e83","#102c50"]} position={[0,0,-8]}/>{towers.map((t,i)=><group key={i} position={[t.x,t.h/2-.02,t.z]}><mesh castShadow receiveShadow><boxGeometry args={[t.w,t.h,t.d]}/><meshPhysicalMaterial color={i%3===0?"#102c4d":"#0b2340"} metalness={.82} roughness={.22} clearcoat={.7}/></mesh><mesh position={[0,0,t.d/2+.006]}><planeGeometry args={[t.w*.82,t.h*.94]}/><meshBasicMaterial color="#1c8bd0" transparent opacity={.16}/></mesh>{Array.from({length:Math.floor(t.h/.55)},(_,j)=><mesh key={j} position={[0,-t.h/2+.38+j*.55,t.d/2+.012]}><planeGeometry args={[t.w*.66,.018]}/><meshBasicMaterial color="#65d7ff" transparent opacity={.7}/></mesh>)}</group>)}</group>}
-function Person(){const root=useRef(),la=useRef(),ra=useRef();useFrame(({clock})=>{const t=clock.elapsedTime;if(root.current)root.current.position.y=-1.1+Math.sin(t*1.4)*.025;if(la.current)la.current.rotation.x=Math.sin(t*1.1)*.035;if(ra.current)ra.current.rotation.x=-Math.sin(t*1.1)*.035});const skin="#b98268",suit="#101e39";return <group ref={root} position={[0,-1.1,.5]}><mesh position={[0,1.62,0]} castShadow><sphereGeometry args={[.22,32,32]}/><meshStandardMaterial color={skin}/></mesh><mesh position={[0,1.83,-.015]}><sphereGeometry args={[.22,24,20,0,Math.PI*2,0,Math.PI*.48]}/><meshStandardMaterial color="#15151b"/></mesh><mesh position={[0,1.31,0]}><cylinderGeometry args={[.13,.16,.22,16]}/><meshStandardMaterial color={skin}/></mesh><mesh position={[0,.77,0]} castShadow><capsuleGeometry args={[.34,.66,8,16]}/><meshStandardMaterial color={suit}/></mesh><mesh position={[0,.93,.292]}><boxGeometry args={[.16,.6,.012]}/><meshStandardMaterial color="#f3f5fa"/></mesh><group ref={la} position={[-.39,1.04,0]}><mesh rotation={[.08,0,-.13]} position={[-.03,-.34,0]} castShadow><capsuleGeometry args={[.105,.48,6,12]}/><meshStandardMaterial color={suit}/></mesh><mesh position={[-.07,-.68,.015]}><sphereGeometry args={[.085,16,16]}/><meshStandardMaterial color={skin}/></mesh></group><group ref={ra} position={[.39,1.04,0]}><mesh rotation={[.08,0,.13]} position={[.03,-.34,0]} castShadow><capsuleGeometry args={[.105,.48,6,12]}/><meshStandardMaterial color={suit}/></mesh><mesh position={[.07,-.68,.015]}><sphereGeometry args={[.085,16,16]}/><meshStandardMaterial color={skin}/></mesh></group>{[-.17,.17].map(x=><group key={x} position={[x,.15,0]}><mesh position={[0,-.3,0]} castShadow><capsuleGeometry args={[.13,.62,6,12]}/><meshStandardMaterial color={suit}/></mesh><mesh position={[0,-.68,.09]} castShadow><boxGeometry args={[.24,.13,.42]}/><meshStandardMaterial color="#f2f4f8"/></mesh></group>)}</group>}
-function Scene(){return <><ambientLight intensity={.65}/><directionalLight position={[3,8,5]} intensity={2.2} castShadow shadow-mapSize={[1024,1024]}/><pointLight position={[-4,3,2]} intensity={38} color="#168bff" distance={14}/><pointLight position={[4,2,-4]} intensity={28} color="#20c8ff" distance={16}/><City/><Person/></>}
-export default function Hero(){const go=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"});return <section id="home" className="cinematic-hero"><div className="hero-grain"/><header className="hero-topline"><a href="#home" className="hero-brand">MTAR<span>.</span></a><nav className="hero-nav">{["Home","About","Work","Contact"].map(n=><button key={n} onClick={()=>go(n.toLowerCase())}>{n}</button>)}</nav><a className="hero-availability" href="mailto:amine.mtar.dev@gmail.com"><i/> Available for opportunities</a></header><div className="hero-copy"><p className="hero-eyebrow"><span/> SOFTWARE ENGINEER · TUNISIA</p><h1>Mohamed<br/><em>Amine Mtar</em></h1><p className="hero-description">I build digital experiences that connect people, ideas and technology — across mobile, web and beyond.</p><div className="hero-actions"><button onClick={()=>go("work")} className="hero-primary">Explore my work <span>↗</span></button><a href="https://github.com/aminemtar" target="_blank" rel="noreferrer" className="hero-secondary">GitHub ↗</a></div><div className="hero-meta"><div><strong>2+</strong><span>YEARS EXPERIENCE</span></div><div><strong>6</strong><span>APPS DELIVERED</span></div><div><strong>iOS · ANDROID</strong><span>PLATFORMS</span></div></div></div><div className="hero-stage"><Canvas shadows dpr={[1,1.5]} camera={{position:[0,2.1,8.5],fov:39}} gl={{antialias:true,alpha:true}}><Suspense fallback={null}><Scene/></Suspense></Canvas><div className="hero-stage-caption"><span>01 / 04</span><span>BUILDING THE FUTURE, ONE EXPERIENCE AT A TIME</span></div></div><aside className="hero-side-card"><span className="side-card-kicker">PROFILE SNAPSHOT</span><div className="side-card-line"><span>FOCUS</span><strong>Mobile & Web</strong></div><div className="side-card-line"><span>STACK</span><strong>Flutter · React · Swift</strong></div><div className="side-card-line"><span>BASED IN</span><strong>Tunis, Tunisia</strong></div><div className="side-card-footer"><i className="pulse-dot"/> OPEN TO GLOBAL OPPORTUNITIES</div></aside><footer className="hero-bottom"><span>SCROLL TO EXPLORE</span><div className="scroll-line"><i/></div><span>© 2026 MTAR</span></footer></section>}
+import React, { useState } from "react";
+
+const jumpTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+
+export default function Hero() {
+  const [light, setLight] = useState(false);
+  const [active, setActive] = useState("home");
+
+  const navigate = (id) => {
+    setActive(id);
+    if (id === "home") window.scrollTo({ top: 0, behavior: "smooth" });
+    else jumpTo(id);
+  };
+
+  return (
+    <section id="home" className={`portfolio-cinematic ${light ? "is-light" : ""}`} aria-label="Mohamed Amine Mtar portfolio introduction">
+      <img className="portfolio-reference-scene" src="/portfolio-reference.webp" alt="" fetchPriority="high" />
+      <img className="portfolio-walk-cycle" src="/portfolio-walk.gif" alt="Mohamed Amine walking toward the viewer in a navy suit" fetchPriority="high" />
+      <div className="portfolio-scene-shade" />
+
+      <a className="scene-hotspot brand-hotspot" href="#home" aria-label="Mohamed Amine Mtar — home" onClick={(e) => { e.preventDefault(); navigate("home"); }} />
+      <nav className="scene-navigation" aria-label="Main navigation">
+        {["home", "work", "about", "contact"].map((id) => (
+          <button key={id} className={active === id ? "scene-nav-hit active" : "scene-nav-hit"} onClick={() => navigate(id)} aria-label={id[0].toUpperCase() + id.slice(1)} />
+        ))}
+      </nav>
+      <button className="scene-theme-hit" onClick={() => setLight((v) => !v)} aria-label={light ? "Switch to dark appearance" : "Switch to light appearance"} />
+
+      <div className="scene-cta-hitboxes">
+        <button onClick={() => navigate("work")} aria-label="Explore my work" />
+        <button onClick={() => navigate("about")} aria-label="Learn more about me" />
+      </div>
+      <div className="scene-tech-hitboxes" aria-label="Technology links">
+        <a href="https://flutter.dev" target="_blank" rel="noreferrer" aria-label="Flutter" />
+        <a href="https://react.dev" target="_blank" rel="noreferrer" aria-label="React" />
+        <a href="https://developer.android.com" target="_blank" rel="noreferrer" aria-label="Android" />
+        <a href="https://developer.apple.com" target="_blank" rel="noreferrer" aria-label="Apple platforms" />
+        <a href="https://github.com/aminemtar" target="_blank" rel="noreferrer" aria-label="GitHub" />
+        <a href="https://developer.mozilla.org" target="_blank" rel="noreferrer" aria-label="Web development" />
+      </div>
+      <div className="scene-scroll-hit" onClick={() => jumpTo("about")} role="button" tabIndex={0} onKeyDown={(e) => e.key === "Enter" && jumpTo("about")} aria-label="Scroll to explore" />
+
+      <div className="scene-mobile-copy">
+        <p>HELLO, I’M</p>
+        <h1>Mohamed Amine <span>Mtar</span></h1>
+        <h2>Full-Stack Developer</h2>
+        <p className="mobile-intro">Building innovative web &amp; mobile solutions with passion and creativity.</p>
+        <div className="mobile-actions">
+          <button onClick={() => navigate("work")}>Explore My Work ↗</button>
+          <button onClick={() => navigate("about")}>Learn More ↓</button>
+        </div>
+      </div>
+      <div className="scene-live-status"><i /> Available for opportunities</div>
+    </section>
+  );
+}
